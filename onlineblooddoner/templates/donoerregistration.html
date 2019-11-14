@@ -1,0 +1,78 @@
+<body style="background: lightgreen">
+{% include 'head.html' %}
+<br><br>
+<h1 align="center">DONOR REGISTRATION</h1>
+<table align="center">
+    <form action="{% url 'savedoner' %}"method="post">
+        {% csrf_token %}
+    <tr>
+        <th><label>name</label>
+            <input type="text"placeholder="name"name="dname"required>
+        </th>
+    </tr>
+    <tr>
+        <th><label>email</label>
+            <input type="email"placeholder="email"name="demail"required>
+        </th>
+    </tr>
+    <tr>
+        <th><label>password</label>
+            <input type="password"placeholder="password"name="dpassword"required>
+        </th>
+    </tr>
+    <tr>
+        <th><label>age</label>
+            <input type="number"placeholder="age"name="dage"required>
+        </th>
+    </tr>
+    <tr>
+        <th><label>weight</label>
+            <input type="number"placeholder="weight"name="dweight"required>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <label>Blood Group</label>
+            <select name="dgroup">
+                <option>A+</option>
+                <option>A-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>O+</option>
+                <option>O-</option>
+            </select>
+        </th>
+    </tr>
+    <tr>
+        <th><label>contact</label>
+            <input type="number"placeholder="contact_number"name="dcontact"max="9999999999"min="6000000000" required>
+        </th>
+    </tr>
+    <tr>
+        <th><label>city</label>
+            <input type="text" placeholder="city"name="dcity"required>
+        </th>
+    </tr>
+    <tr>
+        <th><label>state</label>
+            <input type="text" placeholder="state"name="dstate"required>
+        </th>
+    </tr>
+
+    <tr>
+        <th>
+            <button type="submit">REGISTER</button>
+        </th>
+    </tr>
+    </form>
+    <tr>
+        <form action="{% url 'dregcancel' %}">
+        <th>
+            <button type="submit">CANCEL</button>
+        </th>
+        </form>
+    </tr>
+</table>
+</body>

@@ -1,0 +1,39 @@
+<body style="background: lightgreen">
+{% include 'head.html' %}
+<br><br>
+<h1 align="center">USER REGISTRATION</h1>
+<br>
+<table align="center">
+    <form action="{% url 'saveuser' %}"method="post">
+        {% csrf_token %}
+
+    <tr>
+        <th><label>user name</label>
+            <input type="text"placeholder="user_name"name="uname"required>
+        </th>
+    </tr>
+    <tr>
+        <th><label>email</label>
+            <input type="email"placeholder="email"name="uemail"required>
+        </th>
+    </tr>
+    <tr>
+        <th><label>password</label>
+            <input type="password"placeholder="password"name="upassword"required>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <button type="submit">REGISTER</button>
+        </th>
+    </tr>
+        </form>
+    <tr>
+        <form action="{% url 'uregcancel' %}">
+        <th>
+            <button type="submit">CANCEL</button>
+        </th>
+        </form>
+    </tr>
+</table>
+</body>
